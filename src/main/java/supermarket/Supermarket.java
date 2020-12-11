@@ -47,7 +47,6 @@ public class Supermarket {
                         if (numOfPromoApplications >= 1) {
                             totalPrice = totalPrice.add(promo.getTotalPrice().multiply(BigDecimal.valueOf(numOfPromoApplications)));
                             qty = qty - numOfPromoApplications * promo.getRequiredQty();
-                            bill.put(billEntry.getKey(), qty);
                         }
                     }
                     else if (bill.containsKey(promo.getCodeOfProductRequiredToGetDiscount())) {
@@ -57,7 +56,6 @@ public class Supermarket {
                             int actualNumOfPromoApplications = (maxNumOfPromoApplications < qty)?  maxNumOfPromoApplications : qty;
                             totalPrice = totalPrice.add(promo.getTotalPrice().multiply(BigDecimal.valueOf(actualNumOfPromoApplications)));
                             qty = qty - actualNumOfPromoApplications;
-                            bill.put(billEntry.getKey(), qty);
                         }
                     }
                 }

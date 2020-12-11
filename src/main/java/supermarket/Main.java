@@ -10,7 +10,7 @@ public class Main {
         List<Integer> bill1  = fh.readBill("bill1.txt");
         List<Integer> bill2  = fh.readBill("bill2.txt");
         Supermarket supermarket = new Supermarket(fh, "prices.csv");
-
+        System.out.println("Total price is: " +supermarket.getTotalPrice(bill1));
     }
 
 }
